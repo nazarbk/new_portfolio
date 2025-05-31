@@ -3,7 +3,6 @@ import {FiMenu, FiX} from 'react-icons/fi';
 import {FaGithub, FaLinkedin} from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 
-
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
