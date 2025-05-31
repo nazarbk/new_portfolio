@@ -17,7 +17,12 @@ export default function Navbar() {
 
   
   return (
-    <header className={`w-full fixed top-0 left-0 z-50 bg-transparent backdrop-blur-md transition-all duration-300 ${scrolled ? "shadow-md" : ""}`}>
+    <motion.header 
+      initial={{ opacity: 0, transform: "translateY(-60px)" }}
+      animate={{ opacity: 1, transform: "translateY(0px)" }}
+      transition={{ duration: 1, ease: 'easeOut' }}
+      className={`w-full fixed top-0 left-0 z-50 bg-transparent backdrop-blur-md transition-all duration-300 ${scrolled ? "shadow-md" : ""}`}
+    >
       <nav className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
         <div className="text-2xl font-title font-extrabold tracking-widest text-[#B5E7F7] drop-shadow-md">
           NAZAR <span className="">BLANCO.</span>
@@ -36,10 +41,10 @@ export default function Navbar() {
         </div>
         <div className="hidden lg:flex items-center space-x-6 ml-6">
             <a href="https://github.com/nazarbk" target="_blank" rel="noopener noreferrer">
-              <FaGithub className="text-[#E6D6FF] hover:text-[#99ECFF] text-2xl transition" />
+              <FaGithub className="text-[#E6D6FF] hover:text-[#99ECFF] text-2xl transition-all duration-300" />
             </a>
             <a href="https://www.linkedin.com/in/nazar-blanco-kataran/" target="_blank" rel="noopener noreferrer">
-              <FaLinkedin className="text-[#E6D6FF] hover:text-[#99ECFF] text-2xl transition" />
+              <FaLinkedin className="text-[#E6D6FF] hover:text-[#99ECFF] text-2xl transition-all duration-300" />
             </a>
         </div>
 
@@ -57,24 +62,24 @@ export default function Navbar() {
               transition={{duration: 0.45, ease: 'easeInOut'}}
               className="fixed top-0 left-0 w-full h-screen bg-[rgba(27,21,49,0.98)] backdrop-blur-lg flex flex-col items-center justify-center space-y-8 text-xl font-body z-40"
             >
-              <NavLink href="about" text="About" onClick={() => setMenuOpen(false)} />
-              <NavLink href="skills" text="Skills" onClick={() => setMenuOpen(false)} />
-              <NavLink href="experience" text="Experience" onClick={() => setMenuOpen(false)} />
-              <NavLink href="Projects" text="Projects" onClick={() => setMenuOpen(false)} />
+              <NavLink href="#about" text="About" onClick={() => setMenuOpen(false)} />
+              <NavLink href="#skills" text="Skills" onClick={() => setMenuOpen(false)} />
+              <NavLink href="#experience" text="Experience" onClick={() => setMenuOpen(false)} />
+              <NavLink href="#Projects" text="Projects" onClick={() => setMenuOpen(false)} />
               <ContactButton />
               <div className="flex space-x-6 mt-6">
                 <a href="https://github.com/nazarbk" target="_blank" rel="noopener noreferrer">
-                  <FaGithub className="text-[#E6D6FF] hover:text-[#99ECFF] text-3xl transition" />
+                  <FaGithub className="text-[#E6D6FF] hover:text-[#99ECFF] text-3xl transition-all duration-300" />
                 </a>
                 <a href="https://www.linkedin.com/in/nazar-blanco-kataran/" target="_blank" rel="noopener noreferrer">
-                  <FaLinkedin className="text-[#E6D6FF] hover:text-[#99ECFF] text-3xl transition" />
+                  <FaLinkedin className="text-[#E6D6FF] hover:text-[#99ECFF] text-3xl transition-all duration-300" />
                 </a>
               </div>
             </motion.div>
           )}
         </AnimatePresence>
       </nav>
-    </header>
+    </motion.header>
   )
 }
 

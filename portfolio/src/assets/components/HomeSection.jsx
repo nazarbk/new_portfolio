@@ -1,16 +1,30 @@
 import {Typewriter} from 'react-simple-typewriter';
+import {motion} from 'framer-motion';
+import MyAvatarSVG from '../files/Home_draw.svg';
 
 export default function HomeSection() {
     return (
         <section
             id='home'
-            className='w-full min-h-[90vh] flex flex-col md:flex-row items-center justify-center gap-10 md:gap-20 px-6 pt-16 max-w-7xl mx-auto'
+            className='w-full min-h-[90vh] flex flex-col-reverse md:flex-row items-center justify-center gap-10 md:gap-20 px-6 pt-16 max-w-7xl mx-auto'
         >
-            <div className='flex-1 flex flex-col justify-center items-start'>
+            <motion.div
+                initial={{ opacity: 0, transform: "translateX(-60px)" }}
+                whileInView={{ opacity: 1, transform: "translateX(0px)" }}
+                viewport={{ once: true, amount: 0.6 }}
+                transition={{ duration: 1, ease: 'easeOut' }}
+                className='flex-1 flex flex-col justify-center items-start'
+            >
                 <h2 className='font-body text-lg text-[#E6D6FF] mb-2'>Hi, I'm</h2>
-                <h1 className='font-title text-5xl tracking-widest md:text-6xl font-extrabold text-[#B5E7F7] mb-4 drop-shadow-lg'>
+                <motion.h1 
+                    initial={{ opacity: 0, transform: "translateY(-40px)" }}
+                    whileInView={{ opacity: 1, transform: "translateY(0px)" }}
+                    viewport={{ once: true, amount: 0.6 }}
+                    transition={{ duration: 1, ease: 'easeOut' }}
+                    className='font-title text-5xl tracking-widest md:text-6xl font-extrabold text-[#B5E7F7] mb-4 drop-shadow-lg'
+                >
                     NAZAR BLANCO
-                </h1>
+                </motion.h1>
                 <h3 className='font-title text-2xl md:text-4xl text-[#EA8CFF] font-semibold mb-4 min-h-[38px]'>
                     <Typewriter 
                         words={[
@@ -37,15 +51,18 @@ export default function HomeSection() {
                 >
                     Download CV
                 </a>        
-            </div>
-            <div className='flex-1 flex items-center justify-center'>
-                <div className='w-56 h-56 md:w-64 md:h-64 rounded-full bg-[#4c4270] border-4 border-[#B5E7F7] shadow-2xl flex items-center justify-center overflow-hidden'>
-                    <svg width="120" height="120" viewBox="0 0 120 120">
-                        <circle cx="60" cy="60" r="56" fill="#B5E7F7"/>
-                        <text x="50%" y="54%" textAnchor="middle" fontSize="30" fill="#1B1531" dy=".3em" fontFamily="Outfit, Inter, sans-serif">NB</text>
-                    </svg>
+            </motion.div>
+            <motion.div 
+                initial={{ opacity: 0, transform: "translateY(60px)" }}
+                whileInView={{ opacity: 1, transform: "translateY(0px)" }}
+                viewport={{ once: true, amount: 0.6 }}
+                transition={{ duration: 1, ease: 'easeOut' }}
+                className='flex-1 flex items-center md:justify-end justify-center h-full'
+            >
+                <div className='w-72 h-72 md:w-96 md:h-96 rounded-full bg-[#4c4270] border-4 border-[#B5E7F7] shadow-2xl flex items-center justify-center overflow-hidden'>
+                    <img src={MyAvatarSVG} alt="Nazar Blanco" className="w-full h-full object-cover" />
                 </div>
-            </div>
+            </motion.div>
         </section>
     );
 }

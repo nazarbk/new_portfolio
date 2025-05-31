@@ -1,5 +1,6 @@
 import Navbar from "./assets/components/Navbar";
 import HomeSection from "./assets/components/HomeSection";
+import About from './assets/components/About';
 import './App.css';
 
 export default function App() {
@@ -8,6 +9,7 @@ export default function App() {
       <Navbar />
       <main>
         <HomeSection />
+        <About />
       </main>
     </div>
   );
