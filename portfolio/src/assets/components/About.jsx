@@ -19,14 +19,14 @@ export default function About() {
                 </div>
             </motion.div>
             <motion.div 
-                className='flex-1 flex flex-col justify-center md:items-start items-center text-center md:text-left'
+                className='flex-1 flex flex-col justify-center md:items-start items-start text-left'
                 initial={{ opacity: 0, transform: "translateX(60px)" }}
                 whileInView={{ opacity: 1, transform: "translateX(0px)" }}
                 viewport={{ once: true, amount: 0.6 }}
                 transition={{ duration: 1, ease: 'easeOut' }}
             > 
                 <motion.h2 
-                    className='font-title text-4xl md:text-5xl font-extrabold text-[#B5E7F7] mb-6'
+                    className='font-title text-4xl md:text-5xl font-extrabold text-[#B5E7F7] mb-10'
                     initial={{ opacity: 0, transform: "translateY(-40px)" }}
                     whileInView={{ opacity: 1, transform: "translateY(0px)" }}
                     viewport={{ once: true, amount: 0.6 }}
@@ -35,31 +35,24 @@ export default function About() {
                     About Me
                 </motion.h2>
                 <div className='relative w-full max-w-2xl'>
-                    <div className='absolute left-4 top-6 bottom-6 flex flex-col text-[#5f7e97] text-xs select-none items-start min-w-[1.5em] z-10'
-                        style={{lineHeight: '1.5', fontFamily:'monospace', fontSize: '16px'}}
-                    >
-                        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16].map(i => (
-                            <span key={i}>{i}</span>
-                        ))}
-                    </div>
                     <div
-                        className='bg-[#181325] rounded-3xl border-l-4 border-[#EA8CFF] px-8 py-6 w-full font-mono text-[#B5E7F7] text-base pl-12'
+                        className='bg-[#181325] rounded-3xl border-l-4 border-[#EA8CFF] px-8 py-6 w-full font-mono text-[#B5E7F7] text-base'
                         style={{boxShadow: "0 0 30px 0 #EA8CFF33, 0 2px 14px 0 #1B1531"}}
                     >
                         <span className='text-[#6c93c7]'>{`<AboutMe>`}</span>
                         <br />
                         <br />
-                        Hi! I'm Nazar, a multimedia engineer passionate about <br /> 
+                        Hi! I'm Nazar, a multimedia engineer passionate about
                         programming, art and technologies.
                         <br /><br />
-                        Currently specializing in quantum computing to fuse my <br /> 
+                        Currently specializing in quantum computing to fuse my
                         development skills with future tech.
                         <br /><br />
-                        I also enjoy teamwork, idea-sharing and learning things <br />
+                        I also enjoy teamwork, idea-sharing and learning things
                         everyday. I love building creative web experiences.
                         <br /><br />
-                        Adaptable, proactive and always up for a challenge. I <br />
-                        am seeking opportunities to grow and contribute in the <br />
+                        Adaptable, proactive and always up for a challenge. I
+                        am seeking opportunities to grow, learn and contribute in the
                         technology sector.
                         <br /><br />
                          <span className='text-[#6c93c7]'>{`</AboutMe>`}</span>

@@ -6,7 +6,7 @@ export default function HomeSection() {
     return (
         <section
             id='home'
-            className='w-full min-h-[90vh] flex flex-col-reverse md:flex-row items-center justify-center gap-10 md:gap-20 px-6 pt-16 max-w-7xl mx-auto'
+            className='w-full min-h-[90vh] flex flex-col-reverse md:flex-row items-center justify-center gap-10 md:gap-20 px-6 max-w-7xl mx-auto'
         >
             <motion.div
                 initial={{ opacity: 0, transform: "translateX(-60px)" }}

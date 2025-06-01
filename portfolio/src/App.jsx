@@ -2,6 +2,7 @@ import Navbar from "./assets/components/Navbar";
 import HomeSection from "./assets/components/HomeSection";
 import About from './assets/components/About';
 import './App.css';
+import Skills from "./assets/components/Skills";
 
 export default function App() {
   return (
@@ -10,6 +11,7 @@ export default function App() {
       <main>
         <HomeSection />
         <About />
+        <Skills />
       </main>
     </div>
   );
