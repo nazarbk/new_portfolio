@@ -65,9 +65,7 @@ export default function Skills() {
             <h2 className="font-title text-4xl md:text-5xl font-extrabold text-[#B5E7F7] mb-10 text-center">Skills</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                 {skillCategories.map((cat, idx) => (
-                    <motion.div 
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
+                    <div
                     className="bg-[#181325] border-l-4 border-[#B5E7F7] rounded-3xl p-6 h-full flex flex-col"
                         style={{boxShadow: "0 0 30px 0 rgba(140, 178, 255, 0.2), 0 2px 14px 0 #1B1531"}}
                     >
@@ -77,18 +75,20 @@ export default function Skills() {
                             
                         >
                         {cat.skills.map((skill, si) => (
-                            <div
-                            key={skill.name}
-                            className="group flex flex-col items-center gap-2 p-3 bg-[#282047] rounded-xl hover:bg-[#4c4270] transition-all duration-300 shadow hover:shadow-2xl cursor-pointer"
+                            <motion.div
+                                whileHover={{ scale: 1.1 }}
+                                whileTap={{ scale: 0.95 }}
+                                key={skill.name}
+                                className="group flex flex-col items-center gap-2 p-3 bg-[#282047] rounded-xl hover:bg-[#4c4270] shadow hover:shadow-2xl cursor-pointer"
                             >
                                 <span className="text-2xl text-[#E6D6FF] mb-1">
                                     {skill.icon}
                                 </span>
                                 <span className="text-[#B5E7F7] font-semibold text-xs">{skill.name}</span>
-                            </div>
+                            </motion.div>
                         ))}
                         </div>
-                    </motion.div>
+                    </div>
                 ))}
             </div>
         </section>
