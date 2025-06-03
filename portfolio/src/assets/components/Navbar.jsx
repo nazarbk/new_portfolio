@@ -34,9 +34,8 @@ export default function Navbar() {
           <a href="projects" className="text-[#E6D6FF] hover:text-[#99ECFF] transition font-semibold">Project</a>
           <a href="contact" className="text-[#EA8CFF] hover:text-[#99ECFF] transition font-semibold">Contact</a>*/}
           <NavLink href="#about" text="About" />
-          <NavLink href="#skills" text="Skills" />
-          <NavLink href="#experience" text="Experience" />
-          <NavLink href="#Projects" text="Projects" />
+          <NavLink href="#skills" text="Tech Stack" />
+          <NavLink href="#projects" text="Projects" />
           <ContactButton />
         </div>
         <div className="hidden lg:flex items-center space-x-6 ml-6">
@@ -63,9 +62,8 @@ export default function Navbar() {
               className="fixed top-0 left-0 w-full h-screen bg-[rgba(27,21,49,0.98)] backdrop-blur-lg flex flex-col items-center justify-center space-y-8 text-xl font-body z-40"
             >
               <NavLink href="#about" text="About" onClick={() => setMenuOpen(false)} />
-              <NavLink href="#skills" text="Skills" onClick={() => setMenuOpen(false)} />
-              <NavLink href="#experience" text="Experience" onClick={() => setMenuOpen(false)} />
-              <NavLink href="#Projects" text="Projects" onClick={() => setMenuOpen(false)} />
+              <NavLink href="#skills" text="Tech Stack" onClick={() => setMenuOpen(false)} />
+              <NavLink href="#projects" text="Projects" onClick={() => setMenuOpen(false)} />
               <ContactButton />
               <div className="flex space-x-6 mt-6">
                 <a href="https://github.com/nazarbk" target="_blank" rel="noopener noreferrer">

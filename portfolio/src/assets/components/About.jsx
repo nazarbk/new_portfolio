@@ -37,7 +37,7 @@ export default function About() {
                 <div className='relative w-full max-w-2xl'>
                     <div
                         className='bg-[#181325] rounded-3xl border-l-4 border-[#EA8CFF] px-8 py-6 w-full font-mono text-[#B5E7F7] text-base'
-                        style={{boxShadow: "0 0 30px 0 #EA8CFF33, 0 2px 14px 0 #1B1531"}}
+                        style={{boxShadow: "0 0 30px 0 rgba(234, 140, 255, 0.1), 0 2px 14px 0 #1B1531"}}
                     >
                         <span className='text-[#6c93c7]'>{`<AboutMe>`}</span>
                         <br />

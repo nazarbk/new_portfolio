@@ -69,7 +69,7 @@ export default function Skills() {
                 transition={{ duration: 1, ease: 'easeOut' }}
                 viewport={{ once: true }}
             >
-                Skills
+                Tech Stack
             </motion.h2>
             <motion.div 
                 className="grid grid-cols-1 md:grid-cols-2 gap-10"
@@ -78,10 +78,10 @@ export default function Skills() {
                 transition={{ duration: 1, ease: 'easeOut' }}
                 viewport={{ once: true }}
             >
-                {skillCategories.map((cat, idx) => (
+                {skillCategories.map((cat) => (
                     <div
                         className="bg-[#181325] border-l-4 border-[#B5E7F7] rounded-3xl p-6 h-full flex flex-col"
-                        style={{boxShadow: "0 0 30px 0 rgba(140, 178, 255, 0.2), 0 2px 14px 0 #1B1531"}}
+                        style={{boxShadow: "0 0 30px 0 rgba(140, 178, 255, 0.1), 0 2px 14px 0 #1B1531"}}
                     >
                         <h3 
                             className="font-title text-2xl font-bold text-[#EA8CFF] mb-4"
@@ -95,7 +95,7 @@ export default function Skills() {
                             transition={{ duration: 1, ease: 'easeOut' }}
                             viewport={{ once: true }}
                         >
-                        {cat.skills.map((skill, si) => (
+                        {cat.skills.map((skill) => (
                             <motion.div
                                 whileHover={{ scale: 1.1 }}
                                 whileTap={{ scale: 0.95 }}

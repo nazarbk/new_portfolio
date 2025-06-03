@@ -3,6 +3,8 @@ import HomeSection from "./assets/components/HomeSection";
 import About from './assets/components/About';
 import './App.css';
 import Skills from "./assets/components/Skills";
+import Projects from "./assets/components/Projects";
+import Contact from "./assets/components/Contact";
 
 export default function App() {
   return (
@@ -12,6 +14,8 @@ export default function App() {
         <HomeSection />
         <About />
         <Skills />
+        <Projects />
+        <Contact />
       </main>
     </div>
   );

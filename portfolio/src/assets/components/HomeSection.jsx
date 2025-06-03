@@ -42,7 +42,7 @@ export default function HomeSection() {
                     />
                 </h3>
                 <p className="text-[#f5f5fa] mb-8 max-w-lg">
-                    Passionate about bringing together art, code and science to build impactful digital experiences. Let's push the bondaries of creativity and technology!
+                    Passionate about bringing together art, code and science to build impactful digital experiences. Let's push the boundaries of creativity and technology!
                 </p>
                 <a 
                     href=""
