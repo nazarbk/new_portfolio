@@ -62,17 +62,38 @@ const skillCategories = [
 export default function Skills() {
     return (
         <section className="w-full max-w-6xl mx-auto py-24 px-4" id="skills">
-            <h2 className="font-title text-4xl md:text-5xl font-extrabold text-[#B5E7F7] mb-10 text-center">Skills</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <motion.h2 
+                className="font-title text-4xl md:text-5xl font-extrabold text-[#B5E7F7] mb-10 text-center"
+                initial={{ opacity: 0, transform: "translateY(-60px)" }}
+                whileInView={{ opacity: 1, transform: "translateY(0px)" }}
+                transition={{ duration: 1, ease: 'easeOut' }}
+                viewport={{ once: true }}
+            >
+                Skills
+            </motion.h2>
+            <motion.div 
+                className="grid grid-cols-1 md:grid-cols-2 gap-10"
+                initial={{ opacity: 0, transform: "translateX(-60px)" }}
+                whileInView={{ opacity: 1, transform: "translateX(0px)" }}
+                transition={{ duration: 1, ease: 'easeOut' }}
+                viewport={{ once: true }}
+            >
                 {skillCategories.map((cat, idx) => (
                     <div
-                    className="bg-[#181325] border-l-4 border-[#B5E7F7] rounded-3xl p-6 h-full flex flex-col"
+                        className="bg-[#181325] border-l-4 border-[#B5E7F7] rounded-3xl p-6 h-full flex flex-col"
                         style={{boxShadow: "0 0 30px 0 rgba(140, 178, 255, 0.2), 0 2px 14px 0 #1B1531"}}
                     >
-                        <h3 className="font-title text-2xl font-bold text-[#EA8CFF] mb-4">{cat.title}</h3>
-                        <div 
+                        <h3 
+                            className="font-title text-2xl font-bold text-[#EA8CFF] mb-4"
+                        >
+                            {cat.title}
+                        </h3>
+                        <motion.div 
                             className="grid grid-cols-3 sm:grid-cols-4 gap-5"
-                            
+                            initial={{ opacity: 0, transform: "translateY(-60px)" }}
+                            whileInView={{ opacity: 1, transform: "translateY(0px)" }}
+                            transition={{ duration: 1, ease: 'easeOut' }}
+                            viewport={{ once: true }}
                         >
                         {cat.skills.map((skill, si) => (
                             <motion.div
@@ -87,10 +108,10 @@ export default function Skills() {
                                 <span className="text-[#B5E7F7] font-semibold text-xs">{skill.name}</span>
                             </motion.div>
                         ))}
-                        </div>
+                        </motion.div>
                     </div>
                 ))}
-            </div>
+            </motion.div>
         </section>
     );
 }

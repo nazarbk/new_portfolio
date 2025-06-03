@@ -11,7 +11,7 @@ export default function About() {
                 className='flex-1 flex items-center justify-center md:justify-start h-full'
                 initial={{ opacity: 0, transform: "translateX(-60px)" }}
                 whileInView={{ opacity: 1, transform: "translateX(0px)" }}
-                viewport={{ once: true, amount: 0.6 }}
+                viewport={{ once: true }}
                 transition={{ duration: 1, ease: 'easeOut' }}
             >
                 <div className='w-72 h-72 md:w-96 md:h-96 rounded-full bg-[#4c4270] border-4 border-[#EA8CFF] shadow-xl flex items-center justify-center overflow-hidden'>
@@ -22,14 +22,14 @@ export default function About() {
                 className='flex-1 flex flex-col justify-center md:items-start items-start text-left'
                 initial={{ opacity: 0, transform: "translateX(60px)" }}
                 whileInView={{ opacity: 1, transform: "translateX(0px)" }}
-                viewport={{ once: true, amount: 0.6 }}
+                viewport={{ once: true }}
                 transition={{ duration: 1, ease: 'easeOut' }}
             > 
                 <motion.h2 
                     className='font-title text-4xl md:text-5xl font-extrabold text-[#B5E7F7] mb-10'
                     initial={{ opacity: 0, transform: "translateY(-40px)" }}
                     whileInView={{ opacity: 1, transform: "translateY(0px)" }}
-                    viewport={{ once: true, amount: 0.6 }}
+                    viewport={{ once: true }}
                     transition={{ duration: 1, ease: 'easeOut' }}
                 > 
                     About Me

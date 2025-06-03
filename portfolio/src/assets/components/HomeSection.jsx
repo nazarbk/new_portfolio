@@ -11,7 +11,7 @@ export default function HomeSection() {
             <motion.div
                 initial={{ opacity: 0, transform: "translateX(-60px)" }}
                 whileInView={{ opacity: 1, transform: "translateX(0px)" }}
-                viewport={{ once: true, amount: 0.6 }}
+                viewport={{ once: true }}
                 transition={{ duration: 1, ease: 'easeOut' }}
                 className='flex-1 flex flex-col justify-center items-start'
             >
@@ -19,7 +19,7 @@ export default function HomeSection() {
                 <motion.h1 
                     initial={{ opacity: 0, transform: "translateY(-40px)" }}
                     whileInView={{ opacity: 1, transform: "translateY(0px)" }}
-                    viewport={{ once: true, amount: 0.6 }}
+                    viewport={{ once: true }}
                     transition={{ duration: 1, ease: 'easeOut' }}
                     className='font-title text-5xl tracking-widest md:text-6xl font-extrabold text-[#B5E7F7] mb-4 drop-shadow-lg'
                 >
@@ -55,7 +55,7 @@ export default function HomeSection() {
             <motion.div 
                 initial={{ opacity: 0, transform: "translateY(60px)" }}
                 whileInView={{ opacity: 1, transform: "translateY(0px)" }}
-                viewport={{ once: true, amount: 0.6 }}
+                viewport={{ once: true }}
                 transition={{ duration: 1, ease: 'easeOut' }}
                 className='flex-1 flex items-center md:justify-end justify-center h-full'
             >
