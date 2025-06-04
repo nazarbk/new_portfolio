@@ -72,7 +72,7 @@ export default function ContactSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 1.2, ease: 'easeOut' }}
                 onSubmit={handleSubmit}
-                className="bg-[#181325] border-l-4 border-[#B5E7F7] rounded-3xl p-8 flex flex-col gap-6 shadow-xl"
+                className="bg-[#181325] border-2 border-[#B5E7F7] rounded-3xl p-8 flex flex-col gap-6 shadow-xl"
                 style={{boxShadow: "0 0 30px 0 rgba(140, 178, 255, 0.1), 0 2px 14px 0 #1B1531"}}
             >
                 <div className="flex flex-col md:flex-row gap-6">

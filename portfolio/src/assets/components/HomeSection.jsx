@@ -6,7 +6,7 @@ export default function HomeSection() {
     return (
         <section
             id='home'
-            className='w-full max-w-6xl mx-auto py-24 px-4'
+            className='w-full max-w-6xl mx-auto pt-44 pb-24 px-4'
         >
             <div className='w-full min-h-[60vh] flex flex-col md:flex-row items-center justify-center gap-10 md:gap-20 max-w-7xl mx-auto'>
                 <motion.div

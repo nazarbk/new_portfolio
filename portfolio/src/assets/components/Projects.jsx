@@ -104,7 +104,7 @@ export default function Projects() {
                             whileInView={{opacity: 1, y: 0}}
                             transition={{ duration: 1.2, delay: idx * 0.12, ease: "easeOut" }}
                             viewport={{once: true}}
-                            className="group relative rounded-3xl bg-[#181325] shadow-xl border-l-4 border-[#EA8CFF] overflow-hidden flex flex-col h-full"
+                            className="group relative rounded-3xl bg-[#181325] shadow-xl border-2 border-[#EA8CFF] overflow-hidden flex flex-col h-full"
                             style={{boxShadow: "0 0 30px 0 rgba(234, 140, 255, 0.1), 0 2px 14px 0 rgb(27, 21, 49)"}}
                         >
                             {proj.isNew && (

@@ -94,7 +94,7 @@ export default function Skills() {
             >
                 {skillCategories.map((cat) => (
                     <div
-                        className="bg-[#181325] border-l-4 border-[#B5E7F7] rounded-3xl p-6 h-full flex flex-col"
+                        className="bg-[#181325] border-2 border-[#B5E7F7] rounded-3xl p-6 h-full flex flex-col"
                         style={{boxShadow: "0 0 30px 0 rgba(140, 178, 255, 0.1), 0 2px 14px 0 #1B1531"}}
                     >
                         <h3 
