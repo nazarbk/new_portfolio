@@ -27,7 +27,7 @@ export default function Navbar() {
         <div className="text-2xl font-title font-extrabold tracking-widest text-[#B5E7F7] drop-shadow-md">
           NAZAR BLANCO.
         </div>
-        <div className="hidden lg:flex items-center space-x-4 font-body">
+        <div className="hidden lg:flex items-center space-x-4 font-body text-lg">
           {/*<a href="about" className="text-[#E6D6FF] hover:text-[#99ECFF] transition font-semibold">Contact</a>
           <a href="skills" className="text-[#E6D6FF] hover:text-[#99ECFF] transition font-semibold">Skills</a>
           <a href="experience" className="text-[#E6D6FF] hover:text-[#99ECFF] transition font-semibold">Experience</a>

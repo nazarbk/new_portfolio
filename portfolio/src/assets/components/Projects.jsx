@@ -73,11 +73,11 @@ export default function Projects() {
                 className="flex flex-col items-center"
             >
                 <h2 
-                    className="font-title text-4xl md:text-5xl font-extrabold text-[#B5E7F7] mb-3 text-center"
+                    className="font-title text-3xl md:text-4xl font-extrabold text-[#B5E7F7] mb-2 text-center"
                 >
                     Projects
                 </h2>
-                <div className="w-48 h-1 bg-gradient-to-r from-[#EA8CFF] to-[#B5E7F7] rounded-full mb-5"/>
+                <div className="w-40 h-1 bg-gradient-to-r from-[#EA8CFF] to-[#B5E7F7] rounded-full mb-5"/>
             </motion.div>
             <motion.p
                 initial={{ opacity: 0, transform: "translateY(-40px)" }}

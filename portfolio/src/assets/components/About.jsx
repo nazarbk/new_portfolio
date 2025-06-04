@@ -15,11 +15,11 @@ export default function About() {
                 className="flex flex-col items-center"
             >
                 <h2 
-                    className="font-title text-4xl md:text-5xl font-extrabold text-[#B5E7F7] mb-3 text-center"
+                    className="font-title text-3xl md:text-4xl font-extrabold text-[#B5E7F7] mb-2 text-center"
                 >
                     About Me
                 </h2>
-                <div className="w-56 h-1 bg-gradient-to-r from-[#EA8CFF] to-[#B5E7F7] rounded-full mb-5"/>
+                <div className="w-44 h-1 bg-gradient-to-r from-[#EA8CFF] to-[#B5E7F7] rounded-full mb-5"/>
             </motion.div>
             <motion.p
                 initial={{ opacity: 0, transform: "translateY(-40px)" }}

@@ -70,11 +70,11 @@ export default function Skills() {
                 className="flex flex-col items-center"
             >
                 <h2 
-                    className="font-title text-4xl md:text-5xl font-extrabold text-[#B5E7F7] mb-3 text-center"
+                    className="font-title text-3xl md:text-4xl font-extrabold text-[#B5E7F7] mb-2 text-center"
                 >
-                    Tech Stack
+                    My Skillsets
                 </h2>
-                <div className="w-60 h-1 bg-gradient-to-r from-[#EA8CFF] to-[#B5E7F7] rounded-full mb-5"/>
+                <div className="w-52 h-1 bg-gradient-to-r from-[#EA8CFF] to-[#B5E7F7] rounded-full mb-5"/>
             </motion.div>
             <motion.p
                 initial={{ opacity: 0, transform: "translateY(-40px)" }}
@@ -103,7 +103,7 @@ export default function Skills() {
                             {cat.title}
                         </h3>
                         <motion.div 
-                            className="grid grid-cols-3 sm:grid-cols-4 gap-5"
+                            className="grid grid-cols-2 sm:grid-cols-4 gap-5"
                             initial={{ opacity: 0, transform: "translateY(-60px)" }}
                             whileInView={{ opacity: 1, transform: "translateY(0px)" }}
                             transition={{ duration: 1.2, ease: 'easeOut' }}
