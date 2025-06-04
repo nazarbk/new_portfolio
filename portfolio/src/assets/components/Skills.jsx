@@ -62,20 +62,34 @@ const skillCategories = [
 export default function Skills() {
     return (
         <section className="w-full max-w-6xl mx-auto py-24 px-4" id="skills">
-            <motion.h2 
-                className="font-title text-4xl md:text-5xl font-extrabold text-[#B5E7F7] mb-10 text-center"
+            <motion.div 
                 initial={{ opacity: 0, transform: "translateY(-60px)" }}
                 whileInView={{ opacity: 1, transform: "translateY(0px)" }}
-                transition={{ duration: 1, ease: 'easeOut' }}
                 viewport={{ once: true }}
+                transition={{ duration: 1.2, ease: 'easeOut' }}
+                className="flex flex-col items-center"
             >
-                Tech Stack
-            </motion.h2>
+                <h2 
+                    className="font-title text-4xl md:text-5xl font-extrabold text-[#B5E7F7] mb-3 text-center"
+                >
+                    Tech Stack
+                </h2>
+                <div className="w-60 h-1 bg-gradient-to-r from-[#EA8CFF] to-[#B5E7F7] rounded-full mb-5"/>
+            </motion.div>
+            <motion.p
+                initial={{ opacity: 0, transform: "translateY(-40px)" }}
+                whileInView={{ opacity: 1, transform: "translateY(0px)" }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.2, ease: 'easeOut' }}
+                className="text-center text-[#f5f5fa] text-base md:text-base mb-10"
+            >
+                A collection of my technical skills and the tools I use daily to develop my projects.
+            </motion.p>
             <motion.div 
                 className="grid grid-cols-1 md:grid-cols-2 gap-10"
                 initial={{ opacity: 0, transform: "translateX(-60px)" }}
                 whileInView={{ opacity: 1, transform: "translateX(0px)" }}
-                transition={{ duration: 1, ease: 'easeOut' }}
+                transition={{ duration: 1.2, ease: 'easeOut' }}
                 viewport={{ once: true }}
             >
                 {skillCategories.map((cat) => (
@@ -84,7 +98,7 @@ export default function Skills() {
                         style={{boxShadow: "0 0 30px 0 rgba(140, 178, 255, 0.1), 0 2px 14px 0 #1B1531"}}
                     >
                         <h3 
-                            className="font-title text-2xl font-bold text-[#EA8CFF] mb-4"
+                            className="font-title text-2xl text-center font-bold text-[#EA8CFF] mb-4"
                         >
                             {cat.title}
                         </h3>
@@ -92,7 +106,7 @@ export default function Skills() {
                             className="grid grid-cols-3 sm:grid-cols-4 gap-5"
                             initial={{ opacity: 0, transform: "translateY(-60px)" }}
                             whileInView={{ opacity: 1, transform: "translateY(0px)" }}
-                            transition={{ duration: 1, ease: 'easeOut' }}
+                            transition={{ duration: 1.2, ease: 'easeOut' }}
                             viewport={{ once: true }}
                         >
                         {cat.skills.map((skill) => (

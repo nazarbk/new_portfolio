@@ -25,7 +25,7 @@ export default function Navbar() {
     >
       <nav className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
         <div className="text-2xl font-title font-extrabold tracking-widest text-[#B5E7F7] drop-shadow-md">
-          NAZAR <span className="">BLANCO.</span>
+          NAZAR BLANCO.
         </div>
         <div className="hidden lg:flex items-center space-x-4 font-body">
           {/*<a href="about" className="text-[#E6D6FF] hover:text-[#99ECFF] transition font-semibold">Contact</a>

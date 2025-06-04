@@ -43,18 +43,37 @@ export default function ContactSection() {
     return (
         <section className="w-full max-w-3xl mx-auto py-24 px-4" id="contact">
             {confetti && <Confetti numberOfPieces={220} recycle={false} />}
-
-            <h2 
-                className="font-title text-4xl md:text-5xl font-extrabold text-[#B5E7F7] mb-2 text-center"
+            <motion.div 
+                initial={{ opacity: 0, transform: "translateY(-60px)" }}
+                whileInView={{ opacity: 1, transform: "translateY(0px)" }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.2, ease: 'easeOut' }}
+                className="flex flex-col items-center"
             >
-                Contact
-            </h2>
-            <p className="text-center text-[#99ECFF] text-base md:text-lg mb-10">
+                <h2 
+                    className="font-title text-4xl md:text-5xl font-extrabold text-[#B5E7F7] mb-3 text-center"
+                >
+                    Contact
+                </h2>
+                <div className="w-48 h-1 bg-gradient-to-r from-[#EA8CFF] to-[#B5E7F7] rounded-full mb-5"/>
+            </motion.div>
+            <motion.p
+                initial={{ opacity: 0, transform: "translateY(-40px)" }}
+                whileInView={{ opacity: 1, transform: "translateY(0px)" }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.2, ease: 'easeOut' }}
+                className="text-center text-[#f5f5fa] text-base md:text-base mb-10"
+            >
                 Interested in collaborating or just want to say hi? Feel free to send me a message! 
-            </p>
-            <form 
+            </motion.p>
+            <motion.form 
+                initial={{ opacity: 0, transform: "translateY(60px)" }}
+                whileInView={{ opacity: 1, transform: "translateY(0px)" }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.2, ease: 'easeOut' }}
                 onSubmit={handleSubmit}
-                className="bg-[#181325] border-l-4 border-[#EA8CFF] rounded-3xl p-8 flex flex-col gap-6 shadow-xl"
+                className="bg-[#181325] border-l-4 border-[#B5E7F7] rounded-3xl p-8 flex flex-col gap-6 shadow-xl"
+                style={{boxShadow: "0 0 30px 0 rgba(140, 178, 255, 0.1), 0 2px 14px 0 #1B1531"}}
             >
                 <div className="flex flex-col md:flex-row gap-6">
                     <div className="flex-1 flex flex-col gap-1">
@@ -113,7 +132,7 @@ export default function ContactSection() {
                         Thank you for your message! I'll get back to you soon.
                     </div>
                 )}
-            </form>
+            </motion.form>
         </section>
     )
 }

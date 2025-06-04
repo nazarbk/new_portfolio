@@ -65,9 +65,29 @@ const projects = [
 export default function Projects() {
     return ( 
         <section className="w-full max-w-6xl mx-auto py-24 px-4" id="projects">
-            <h2 className="font-title text-4xl md:text-5xl font-extrabold text-[#B5E7F7] mb-10 text-center">
-                Projects
-            </h2>
+            <motion.div 
+                initial={{ opacity: 0, transform: "translateY(-60px)" }}
+                whileInView={{ opacity: 1, transform: "translateY(0px)" }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.2, ease: 'easeOut' }}
+                className="flex flex-col items-center"
+            >
+                <h2 
+                    className="font-title text-4xl md:text-5xl font-extrabold text-[#B5E7F7] mb-3 text-center"
+                >
+                    Projects
+                </h2>
+                <div className="w-48 h-1 bg-gradient-to-r from-[#EA8CFF] to-[#B5E7F7] rounded-full mb-5"/>
+            </motion.div>
+            <motion.p
+                initial={{ opacity: 0, transform: "translateY(-40px)" }}
+                whileInView={{ opacity: 1, transform: "translateY(0px)" }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.2, ease: 'easeOut' }}
+                className="text-center text-[#f5f5fa] text-sm md:text-base mb-10"
+            >
+                Some of my recent projects that showcase what I have built and learned, in which I try to improve and develop new skills.
+            </motion.p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
                 {projects.map((proj, idx) => (
                     <Tilt
@@ -82,7 +102,7 @@ export default function Projects() {
                         <motion.div
                             initial={{opacity: 0, y: 60}}
                             whileInView={{opacity: 1, y: 0}}
-                            transition={{ duration: 1, delay: idx * 0.12, ease: "easeOut" }}
+                            transition={{ duration: 1.2, delay: idx * 0.12, ease: "easeOut" }}
                             viewport={{once: true}}
                             className="group relative rounded-3xl bg-[#181325] shadow-xl border-l-4 border-[#EA8CFF] overflow-hidden flex flex-col h-full"
                             style={{boxShadow: "0 0 30px 0 rgba(234, 140, 255, 0.1), 0 2px 14px 0 rgb(27, 21, 49)"}}
