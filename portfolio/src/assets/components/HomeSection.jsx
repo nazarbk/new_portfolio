@@ -46,7 +46,7 @@ export default function HomeSection() {
                         Passionate about bringing together art, code and science to build impactful digital experiences. Let's push the boundaries of creativity and technology!
                     </p>
                     <a 
-                        href=""
+                        href="../files/CV - NAZAR BLANCO KATARAN 2025.pdf"
                         download
                         className='inline-block px-7 py-3 rounded-2xl border-2 border-[#EA8CFF] bg-[#EA8CFF] text-[#1B1531] font-title font-bold text-lg shadow-none hover:bg-[#B5E7F7] hover:border-[#B5E7F7] hover:text-[#1B1531] transition-all duration-300'
                     >
