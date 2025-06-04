@@ -17,7 +17,7 @@ export default function App() {
     <div className="bg-[radial-gradient(ellipse_at_top,_#282047_0%,_#1B1531_80%,_#21152b_100%)] min-h-screen font-body">
       <CursorHalo />
       {!unlocked ? (
-        <div className="flex items-center justify-center min-h-screen">
+        <div className="relative z-20 flex items-center justify-center min-h-screen">
           <Terminal onSuccess={() => setUnlocked(true)} />
         </div>
       ) : (
