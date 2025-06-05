@@ -29,7 +29,7 @@ const commandResponses = {
         <>I'm Nazar Blanco, a multimedia engineer and web developer passionate about creativity, interactivity, and currently developing skills on quantum computing.</>
     ),
     cv: (
-        <a>View my resume</a>
+        <>View my resume: <a href="/NazarBlancoCV.pdf" download className="text-[#6a7ff7] underline"> Download CV</a></>
     ),
     contact: (
         <>You can contact me at: <a href="mailto:nazarblanco@gmail.com" className="text-[#6a7ff7] underline">nazarblanco@gmail.com</a></>
