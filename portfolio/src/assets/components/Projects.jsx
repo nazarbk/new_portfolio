@@ -7,9 +7,20 @@ import Programmingdle from "../files/Programmingdle.png";
 import Quizmixdle from "../files/Quizmixdle.png";
 import Portfolio from "../files/Portfolio_v1.png";
 import BoomArtist from "../files/BoomArtists.png";
+import BB84 from "../files/BB84_protocol.png";
+
 
 
 const projects = [
+    {
+        title: "BB84 Protocol Simulator",
+        image: BB84,
+        description: "Interactive Streamlit app simulating the BB84 quantum cryptography protocol, allowing users to visualize key distribution and detect potential eavesdropping.",
+        tech: ["Python", "Qiskit", "Streamlit"],
+        github: "https://github.com/nazarbk/bb84_app",
+        demo: "https://bb84-protocol.streamlit.app/",
+        isNew: true
+    },
     {
         title: "Qonverse",
         image: Qonverse,
