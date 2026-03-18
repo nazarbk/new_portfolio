@@ -8,10 +8,20 @@ import Quizmixdle from "../files/Quizmixdle.png";
 import Portfolio from "../files/Portfolio_v1.png";
 import BoomArtist from "../files/BoomArtists.png";
 import BB84 from "../files/BB84_protocol.png";
+import QuantumLab from "../files/Quantum_Lab.png";
 
 
 
 const projects = [
+    {
+        title: "Quantum Lab",
+        image: QuantumLab,
+        description: "An interactive journey to understand the principles of the computing of the future. Discover superposition, entanglement, and cryptography through in-browser simulations.",
+        tech: ["React", "Framer Motion", "KaTeX"],
+        github: "https://github.com/nazarbk/bit-vs-qubit",
+        demo: "https://bit-vs-qubit.vercel.app/",
+        isNew: true
+    },
     {
         title: "BB84 Protocol Simulator",
         image: BB84,
