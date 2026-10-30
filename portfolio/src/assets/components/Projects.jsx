@@ -9,18 +9,54 @@ import Portfolio from "../files/Portfolio_v1.png";
 import BoomArtist from "../files/BoomArtists.png";
 import BB84 from "../files/BB84_protocol.png";
 import QuantumLab from "../files/Quantum_Lab.png";
+import CVAnalyzer from "../files/CV_Analyzer.png";
+import SushiLeague from "../files/Sushi_League.png";
+import Lockr from "../files/Lockr.png";
+import QStatePrep from "../files/q_state_prep.png";
 
 
 
 const projects = [
+    {
+        title: "CV Analyzer",
+        image: CVAnalyzer,
+        description: "Analyzes a résumé entirely in the browser: ATS and AI filter checks, job-offer keyword matching, country conventions and an ATS-friendly template export. No server, no cookies.",
+        tech: ["JavaScript", "pdf.js", "pdf-lib", "Netlify"],
+        github: "https://github.com/nazarbk/analizador_cv",
+        demo: "https://cv-analizador.netlify.app/",
+        isNew: true
+    },
+    {
+        title: "Sushi League",
+        image: SushiLeague,
+        description: "Real-time sushi counter for all-you-can-eat nights with friends. Everyone counts from their own phone, with a live ranking and a \"how full are you?\" check at the end.",
+        tech: ["JavaScript", "Firebase", "Netlify"],
+        demo: "https://sushi-league.netlify.app/",
+        isNew: true
+    },
+    {
+        title: "Lockr",
+        image: Lockr,
+        description: "Encrypted password notebook for Android and iOS. PIN and biometric unlock, AES-256-GCM vault, a security center for weak, reused and leaked passwords, and encrypted backups.",
+        tech: ["React Native", "Expo", "AES-256-GCM"],
+        github: "https://github.com/nazarbk/bloc-claves",
+        isNew: true
+    },
+    {
+        title: "q-state-prep",
+        image: QStatePrep,
+        description: "Quantum state preparation for 1D procedural noise distributions. Compares exact tree-based, pruned and variational (COBYLA) circuits in a Streamlit dashboard.",
+        tech: ["Python", "Qiskit", "SciPy", "Streamlit"],
+        github: "https://github.com/nazarbk/q-state-prep",
+        isNew: true
+    },
     {
         title: "Quantum Lab",
         image: QuantumLab,
         description: "An interactive journey to understand the principles of the computing of the future. Discover superposition, entanglement, and cryptography through in-browser simulations.",
         tech: ["React", "Framer Motion", "KaTeX"],
         github: "https://github.com/nazarbk/bit-vs-qubit",
-        demo: "https://bit-vs-qubit.vercel.app/",
-        isNew: true
+        demo: "https://bit-vs-qubit.vercel.app/"
     },
     {
         title: "BB84 Protocol Simulator",
@@ -28,8 +64,7 @@ const projects = [
         description: "Interactive Streamlit app simulating the BB84 quantum cryptography protocol, allowing users to visualize key distribution and detect potential eavesdropping.",
         tech: ["Python", "Qiskit", "Streamlit"],
         github: "https://github.com/nazarbk/bb84_app",
-        demo: "https://bb84-protocol.streamlit.app/",
-        isNew: true
+        demo: "https://bb84-protocol.streamlit.app/"
     },
     {
         title: "Qonverse",
@@ -37,8 +72,7 @@ const projects = [
         description: "AI-powered conversation simulator using Clerk + Firebase.",
         tech: ["React", "Firebase", "Clerk", "Vite", "Gemini"],
         github: "https://github.com/nazarbk/Qonverse",
-        demo: "https://qonverse.vercel.app/",
-        isNew: true
+        demo: "https://qonverse.vercel.app/"
     },
     {
         title: "Quantum Single Qubit Visualizer",
@@ -46,8 +80,7 @@ const projects = [
         description: "An interactive app for visualizing the state of a single qubit. Apply quantum gates, view the state in Dirac notation, and explore its representation on the Bloch Sphere.",
         tech: ["Python", "Qiskit", "Streamlit", "Plotly"],
         github: "https://github.com/nazarbk/quantum_single_qubit_visualizer",
-        demo: "https://quantum-single-qubit-visualizer.streamlit.app/",
-        isNew: true
+        demo: "https://quantum-single-qubit-visualizer.streamlit.app/"
     },
     {
         title: "Programmingdle",
