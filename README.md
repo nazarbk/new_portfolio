@@ -8,12 +8,14 @@ Built with **React**, **Vite**, **Tailwind CSS**, and featuring animations with 
 
 ## 🌟 Features
 
-- **Interactive Terminal** on first load (type `npm run dev` to unlock!)
+- **Hidden terminal easter egg**: press <kbd>`</kbd> or click the `>_` icon in the navbar
+- **English / Spanish** switch, remembered between visits
+- **Experience timeline** with work and education
 - **Custom Mouse Halo** effect
 - **Modern, responsive design**
 - Animated sections (Framer Motion)
 - Themed with a personal color palette and designs
-- Mobile-friendly and accesible
+- Mobile-first, responsive and accessible
 
 ---
 
@@ -30,6 +32,8 @@ Built with **React**, **Vite**, **Tailwind CSS**, and featuring animations with 
 
 ## 🌐 Live Demo
 
+👉 [nazar-blanco-portfolio.vercel.app](https://nazar-blanco-portfolio.vercel.app/)
+
 ---
 
 ## 📦 Getting Started
@@ -37,7 +41,7 @@ Built with **React**, **Vite**, **Tailwind CSS**, and featuring animations with 
 ### 1. **Clone the repository:**
 ```bash
 git clone https://github.com/nazarbk/new_portfolio
-cd portfolio
+cd new_portfolio/portfolio
 ```
 ### 2. **Install the dependencies:**
 ```bash
@@ -53,7 +57,7 @@ npm run dev
 
 ## 🛠️ Useful Scripts
 ```bash
-npm run dev # Start deployment server
+npm run dev # Start the development server
 npm run build # Build for production
 npm run preview # Preview the production build locally
 ```
@@ -73,6 +77,6 @@ Feel free to explore the code or get in touch for collabs!
 ---
 
 ## 📝 Extras 
-- Unlock by typing `npm run dev` in the terminal.
+- Open the hidden terminal with <kbd>`</kbd> or the `>_` icon, then type `npm run dev`.
 - Try `help`, `about`, or `contact` for more hidden commands.
 - Enjoy my portfolio!

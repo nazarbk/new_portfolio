@@ -1,49 +1,22 @@
-import React, {useState, useRef, useEffect} from "react";
-//import '../styles/Terminal.css';
+import {useState, useRef, useEffect} from "react";
 import { Typewriter } from "react-simple-typewriter";
 import { motion } from 'framer-motion';
+import { useLang } from "../../i18n";
 
 const validCommand = "npm run dev";
+const email = "nazarblanco@gmail.com";
 const errorMessages = [
-    <span className="text-[#F67280]">Error: command not found</span>,
-    <span className="text-[#F67280]">npm ERR! missing script: run-dev</span>,
-    <span className="text-[#F67280]">SyntaxError: Unexpected identifier</span>,
-    <span className="text-[#F67280]">node: bad option: --dev</span>,
-    <span className="text-[#F67280]">npm WARN config global --global, --local are deprecated</span>,
-
+    "Error: command not found",
+    "npm ERR! missing script: run-dev",
+    "SyntaxError: Unexpected identifier",
+    "node: bad option: --dev",
+    "npm WARN config global --global, --local are deprecated",
 ];
 
-const commandResponses = {
-    help: (
-        <div>
-            <div>Available commands:</div>
-            <div>- <b>npm run dev</b> : Start the portfolio</div>
-            <div>- <b>help</b> : Show this help</div>
-            <div>- <b>about</b> : Who is Nazar Blanco</div>
-            <div>- <b>cv</b> : View my resume</div>
-            <div>- <b>clear</b> : Clear the terminal</div>
-            <div>- <b>contact</b> : My contact information</div>
-        </div>
-    ),
-    about: (
-        <>I'm Nazar Blanco, a multimedia engineer and web developer passionate about creativity, interactivity, and currently developing skills on quantum computing.</>
-    ),
-    cv: (
-        <>View my resume: <a href="/NazarBlancoCV.pdf" download className="text-[#6a7ff7] underline"> Download CV</a></>
-    ),
-    contact: (
-        <>You can contact me at: <a href="mailto:nazarblanco@gmail.com" className="text-[#6a7ff7] underline">nazarblanco@gmail.com</a></>
-    )
-}
+const sequenceColors = ["#A1A6B4", "#A1A6B4", "#A1A6B4", "#55e4a6"];
 
-const sequence = [
-    {text: "Running portfolio...", color: "#A1A6B4"},
-    {text: "Compiling...", color: "#A1A6B4"},
-    {text: "Optimizing...", color: "#A1A6B4"},
-    {text: "All systems operational!", color: "#55e4a6"}
-];
-
-export default function Terminal({ onSuccess }) {
+export default function Terminal({ onSuccess, onClose }) {
+    const { t: { terminal: tt } } = useLang();
     const [input, setInput] = useState("");
     const [error, setError] = useState("");
     const [showSequence, setShowSequence] = useState(false);
@@ -52,6 +25,25 @@ export default function Terminal({ onSuccess }) {
     const [loading, setLoading] = useState(false);
     const inputRef = useRef(null);
     const historyRef = useRef(null);
+    const sequence = tt.sequence;
+
+    const commandResponses = {
+        help: (
+            <div>
+                <div>{tt.helpTitle}</div>
+                {tt.help.map(([cmd, text]) => (
+                    <div key={cmd}>- <b>{cmd}</b> : {text}</div>
+                ))}
+            </div>
+        ),
+        about: <>{tt.about}</>,
+        cv: (
+            <>{tt.cv} <a href="/NazarBlancoCV.pdf" download className="text-[#6a7ff7] underline">{tt.cvLink}</a></>
+        ),
+        contact: (
+            <>{tt.contact} <a href={`mailto:${email}`} className="text-[#6a7ff7] underline break-all">{email}</a></>
+        ),
+    };
 
     // Scroll to bottom on new command/sequence
     useEffect(() => {
@@ -63,18 +55,32 @@ export default function Terminal({ onSuccess }) {
     // Sequence animation
     useEffect(() => {
         if(showSequence && sequenceStep < sequence.length) {
-            const delay = sequence[sequenceStep].text.length * 38 + 550;
+            const delay = sequence[sequenceStep].length * 38 + 550;
             const timeout = setTimeout(() => {
                 setSequenceStep(prev => prev + 1);
             }, delay);
             return () => clearTimeout(timeout);
         }
         if(showSequence && sequenceStep === sequence.length) {
-            setTimeout(() => {
+            const timeout = setTimeout(() => {
                 onSuccess();
             }, 800);
+            return () => clearTimeout(timeout);
         }
-    }, [showSequence, sequenceStep, onSuccess]);
+    }, [showSequence, sequenceStep, sequence, onSuccess]);
+
+    // Runs the boot sequence (typed command or tapping the highlighted command)
+    function startPortfolio(commandText) {
+        if (loading) return;
+        setHistory(prev => [...prev, {command: commandText}]);
+        setLoading(true);
+        setInput('');
+        setError('');
+        setTimeout(() => {
+            setShowSequence(true);
+            setSequenceStep(0);
+        }, 700);
+    }
 
     // Command handler
     function handleSubmit (e) {
@@ -82,18 +88,13 @@ export default function Terminal({ onSuccess }) {
         const cmd = input.trim().toLowerCase();
 
         if(cmd === validCommand) {
-            setHistory([...history, {command: input}]);
-            setLoading(true);
-            setInput('');
-            setError('');
-            setTimeout(() => {
-                setShowSequence(true);
-                setSequenceStep(0);
-            }, 700);
+            startPortfolio(input);
         }else if (cmd === 'clear') {
             setHistory([]);
             setInput('');
             setError('');
+        }else if (cmd === 'exit') {
+            onClose();
         }else if (commandResponses[cmd]) {
             setHistory([...history, {command: input, response: commandResponses[cmd] }]);
             setInput('');
@@ -101,37 +102,60 @@ export default function Terminal({ onSuccess }) {
         }else if (cmd) {
             const randomError = errorMessages[Math.floor(Math.random() * errorMessages.length)];
             setError(randomError);
-            setHistory([...history, {command: input, response: <span style={{color: '#F67280'}}>{randomError}</span> }]);
+            setHistory([...history, {command: input, response: <span className="text-[#F67280]">{randomError}</span> }]);
             setInput('');
-            inputRef.current && inputRef.current.focus();
+            inputRef.current?.focus();
         }
     };
 
     return (
-        <motion.div 
-            initial={{ opacity: 0, y: 200 }}
+        <motion.div
+            initial={{ opacity: 0, y: 120 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity:0, y: 200}}
-            transition={{ duration: 1.2, ease: 'easeOut' }}
+            exit={{ opacity: 0, y: 120 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
             className="rounded-2xl shadow-2xl border-2 border-[#EA8CFF] max-w-sm md:max-w-xl w-full mx-auto font-mono bg-[#181325] text-[#B5E7F7] overflow-hidden"
             style={{boxShadow: "0 0 30px 0 rgba(140, 178, 255, 0.1), 0 2px 14px 0 #1B1531"}}
         >
             <div className="flex items-center h-9 px-4 bg-gradient-to-r from-[#282047] to-[#4c4270] border-b-2 border-[#EA8CFF] select-none">
-                <span className="w-3 h-3 rounded-full bg-[#F67280] mr-2"></span>
+                <button
+                    type="button"
+                    onClick={onClose}
+                    aria-label={tt.close}
+                    title={tt.close}
+                    className="w-3 h-3 rounded-full bg-[#F67280] mr-2 hover:brightness-125 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B5E7F7]"
+                ></button>
                 <span className="w-3 h-3 rounded-full bg-[#FFD86E] mr-2"></span>
                 <span className="w-3 h-3 rounded-full bg-[#55e4a6] mr-4"></span>
-                <span className="font-bold text-[#E6D6FF] text-[1.05em] tracking-wider">nazarblanco@dev:~</span>
+                <span className="font-bold text-[#E6D6FF] text-[1.05em] tracking-wider truncate">nazarblanco@dev:~</span>
+                <button
+                    type="button"
+                    onClick={onClose}
+                    aria-label={tt.close}
+                    className="ml-auto -mr-2 px-2 text-[#E6D6FF] hover:text-[#99ECFF] text-xl leading-none"
+                >
+                    ×
+                </button>
             </div>
-            <div className="p-4 md:p-6 pb-3">
+            <div className="p-4 md:p-6 pb-4 text-sm sm:text-base">
                 <div className="mb-2 text-[#E6D6FF] text-body">
-                    To run the portfolio execute: <span className="bg-[#EA8CFF]/10 text-[#EA8CFF] rounded px-1.5">npm run dev</span>
+                    {tt.intro}{" "}
+                    <button
+                        type="button"
+                        onClick={() => startPortfolio(validCommand)}
+                        disabled={loading}
+                        title={tt.clickToRun}
+                        className="bg-[#EA8CFF]/10 text-[#EA8CFF] rounded px-1.5 hover:bg-[#EA8CFF]/25 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#B5E7F7] transition cursor-pointer disabled:cursor-default"
+                    >
+                        {validCommand}
+                    </button>
                 </div>
                 <div className="mb-2 text-[#6c93c7] text-body">
-                    💡 Type <b>help</b> to see a list of available commands.
+                    💡 {tt.tip} <b>help</b> {tt.tipEnd}
                 </div>
 
-                <div 
-                    className="max-h-56 md:max-h-80 overflow-y-auto pr-2 custom-scroll rounded transition-all mb-2" 
+                <div
+                    className="max-h-56 md:max-h-80 overflow-y-auto pr-2 custom-scroll rounded transition-all mb-2"
                     ref={historyRef}
                     style={{
                         scrollbarWidth: 'thin',
@@ -149,15 +173,15 @@ export default function Terminal({ onSuccess }) {
                             )}
                         </div>
                     ))}
-                    {showSequence && 
-                        sequence.map((line, idx) =>
+                    {showSequence &&
+                        sequence.map((text, idx) =>
                             idx <= sequenceStep ? (
                                 <div
                                     key={idx}
-                                    style={{color: line.color}}>
+                                    style={{color: sequenceColors[idx]}}>
                                     {idx === sequenceStep ?
-                                        <Typewriter 
-                                            words={[line.text]}
+                                        <Typewriter
+                                            words={[text]}
                                             loop={1}
                                             cursor={false}
                                             typeSpeed={40}
@@ -169,7 +193,7 @@ export default function Terminal({ onSuccess }) {
                                                 }
                                             }}
                                         /> :
-                                        line.text
+                                        text
                                     }
                                 </div>
                             ) : null
@@ -181,8 +205,12 @@ export default function Terminal({ onSuccess }) {
                     <span className="text-[#EA8CFF] font-bold text-lg select-none">&gt; </span>
                     <input
                         ref={inputRef}
+                        aria-label={tt.label}
+                        autoCapitalize="off"
+                        autoCorrect="off"
+                        enterKeyHint="go"
                         className={
-                            "flex-1 bg-transparent border-0 border-b-2 outline-none px-2 py-1 text-[#B5E7F7] text-base transition-all duration-200 " +
+                            "flex-1 min-w-0 bg-transparent border-0 border-b-2 outline-none px-2 py-1 text-[#B5E7F7] text-base transition-all duration-200 " +
                             (error ? "border-[#F67280] placeholder-[#F67280] text-[#F67280]" : "border-[#EA8CFF] focus:border-[#B5E7F7]")
                         }
                         type="text"
