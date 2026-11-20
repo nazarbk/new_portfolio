@@ -13,6 +13,8 @@ import CVAnalyzer from "../files/CV_Analyzer.webp";
 import SushiLeague from "../files/Sushi_League.webp";
 import Lockr from "../files/Lockr.webp";
 import QStatePrep from "../files/q_state_prep.webp";
+import Croac from "../files/Croac.webp";
+import SecretSanta from "../files/Secret_Santa.webp";
 import { useLang } from "../../i18n";
 
 // Tilt only where there is a real mouse: on phones it fights with scrolling
@@ -23,6 +25,31 @@ const canHover =
 // Texts written as { en, es } follow the selected language
 const projects = [
     {
+        id: "croac",
+        title: "Croac",
+        image: Croac,
+        description: {
+            en: "Gamified task and habit manager: every task you finish gives XP and coins to your frog, which grows from tadpole to wise frog and wears what you buy in the shop. Natural-language quick add, recurring tasks, friends and a weekly ranking.",
+            es: "Gestor de tareas y hábitos gamificado: cada tarea completada da experiencia y monedas a tu rana, que crece de renacuajo a rana sabia y luce lo que compras en la tienda. Entrada rápida en lenguaje natural, tareas recurrentes, amigos y ranking semanal.",
+        },
+        tech: ["React", "TypeScript", "Tailwind CSS", "Supabase", "PWA"],
+        github: "https://github.com/nazarbk/croac",
+        demo: "https://croac-umber.vercel.app/",
+        isNew: true
+    },
+    {
+        id: "secret-santa",
+        title: { en: "Secret Santa", es: "Amigo invisible" },
+        image: SecretSanta,
+        description: {
+            en: "Secret Santa platform with a single gift chain: secret draw with a reveal wheel, wish lists and an anonymous chat between giver and receiver.",
+            es: "Plataforma de amigo invisible con cadena única de regalos: sorteo secreto con ruleta de revelación, listas de deseos y chat anónimo entre quien regala y quien recibe.",
+        },
+        tech: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
+        demo: "https://secret-santa-orcin-omega.vercel.app/",
+        isNew: true
+    },
+    {
         id: "cv-analyzer",
         title: { en: "CV Analyzer", es: "Analizador de CV" },
         image: CVAnalyzer,
@@ -32,7 +59,7 @@ const projects = [
         },
         tech: ["JavaScript", "pdf.js", "pdf-lib", "Netlify"],
         github: "https://github.com/nazarbk/analizador_cv",
-        demo: "https://cv-analizador.netlify.app/",
+        demo: "https://analizadorcv.com/",
         isNew: true
     },
     {
